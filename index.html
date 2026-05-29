@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The EDGE Programme</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --dark:    #27251E;
+      --sage:    #7A9E7E;
+      --olive:   #6B7C45;
+      --bg:      #F5F2EC;
+      --card:    #EDE9DF;
+      --text:    #3D3B35;
+      --gold:    #A89060;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--dark);
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+    }
+    header .logo {
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      color: var(--sage);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #F5F2EC;
+      letter-spacing: 0.08em;
+    }
+    header h1 span { color: var(--sage); }
+    header p {
+      margin-top: 0.75rem;
+      font-size: 1rem;
+      color: #b0ad9e;
+      letter-spacing: 0.05em;
+      font-style: italic;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--olive);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.85rem 1rem;
+    }
+    nav a {
+      color: #F5F2EC;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: 'Arial', sans-serif;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, #3a3a2a 100%);
+      color: #F5F2EC;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .hero h2 {
+      font-size: 1.9rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .hero h2 strong { color: var(--sage); }
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      color: #c8c5b8;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--sage);
+      color: var(--dark);
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+    }
+
+    /* ── MODULES GRID ── */
+    .modules-section {
+      max-width: 1100px;
+      margin: 3.5rem auto;
+      padding: 0 1.5rem;
+    }
+    .modules-section h3 {
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--dark);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+    .modules-section .subtitle {
+      text-align: center;
+      color: var(--gold);
+      font-style: italic;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 2rem 1.75rem;
+      border-left: 5px solid var(--sage);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(39,37,30,0.12);
+    }
+    .card .module-number {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--olive);
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 0.6rem;
+    }
+    .card h4 {
+      font-size: 1.15rem;
+      color: var(--dark);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: #6b6860;
+      line-height: 1.7;
+      font-family: 'Arial', sans-serif;
+    }
+    .card .tag {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--olive);
+      color: #F5F2EC;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: 'Arial', sans-serif;
+    }
+    .card.featured { border-left-color: var(--gold); }
+    .card.featured .module-number { color: var(--gold); }
+    .card.featured .tag { background: var(--gold); color: var(--dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: #7a7870;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      font-family: 'Arial', sans-serif;
+      letter-spacing: 0.05em;
+    }
+    footer span { color: var(--sage); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Excellence · Development · Growth · Engagement</div>
+  <h1>The <span>EDGE</span> Programme</h1>
+  <p>Professional skills for corporate excellence</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="#">About</a>
+  <a href="#">Modules</a>
+  <a href="#">Contact</a>
+</nav>
+
+<section class="hero">
+  <h2>Build the skills that drive <strong>real results</strong></h2>
+  <p>Six expertly designed modules to elevate your professional impact — from leading meetings to navigating global teams with confidence.</p>
+  <span class="hero-badge">6 Modules · Blended Learning · Cohort-Based</span>
+</section>
+
+<section class="modules-section">
+  <h3>Programme Modules</h3>
+  <p class="subtitle">Select a module to begin your learning journey</p>
+  <div class="grid">
+
+    <a href="module1.html" class="card">
+      <div class="module-number">Module 01</div>
+      <h4>Lead Meetings That Get Results</h4>
+      <p>Master the skills to plan, facilitate and close meetings that drive action and respect everyone's time.</p>
+      <span class="tag">Coming Soon</span>
+    </a>
+
+    <a href="module2.html" class="card">
+      <div class="module-number">Module 02</div>
+      <h4>Elevating Customer Experience</h4>
+      <p>Develop the mindset and techniques to deliver exceptional service and build lasting client relationships.</p>
+      <span class="tag">Coming Soon</span>
+    </a>
+
+    <a href="module3.html" class="card">
+      <div class="module-number">Module 03</div>
+      <h4>Mentoring for Growth and Performance</h4>
+      <p>Learn how to guide, support and develop others through structured mentoring conversations and feedback.</p>
+      <span class="tag">Coming Soon</span>
+    </a>
+
+    <a href="module4.html" class="card">
+      <div class="module-number">Module 04</div>
+      <h4>Confidently Navigating Difficult Conversations</h4>
+      <p>Build the confidence and tools to handle challenging workplace conversations with clarity and empathy.</p>
+      <span class="tag">Coming Soon</span>
+    </a>
+
+    <a href="module5.html" class="card">
+      <div class="module-number">Module 05</div>
+      <h4>Communicate with Confidence and Impact</h4>
+      <p>Sharpen your communication skills to influence, persuade and connect effectively in any professional setting.</p>
+      <span class="tag">Coming Soon</span>
+    </a>
+
+    <a href="module6.html" class="card featured">
+      <div class="module-number">Module 06</div>
+      <h4>Leading Across Borders and Time Zones</h4>
+      <p>Navigate cultural differences and remote team dynamics to lead global teams with confidence and cultural intelligence.</p>
+      <span class="tag">Available Now</span>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>The EDGE Programme</span> · Professional Skills for Corporate Excellence</p>
+</footer>
+
+</body>
+</html>
