@@ -1,193 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Module 6 – Leading Across Borders | EDGE Programme</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--dark:#27251E;--sage:#7A9E7E;--olive:#6B7C45;--bg:#F5F2EC;--card:#EDE9DF;--text:#3D3B35;--gold:#A89060;}
-body{font-family:'Georgia',serif;background:var(--bg);color:var(--text);}
-header{background:var(--dark);padding:1.5rem 2rem 2rem;text-align:center;}
-header .back{display:inline-block;color:var(--sage);text-decoration:none;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;font-family:'Arial',sans-serif;margin-bottom:1rem;}
-header .back:hover{color:var(--gold);}
-header .logo{font-size:0.72rem;letter-spacing:0.25em;color:var(--sage);text-transform:uppercase;font-family:'Arial',sans-serif;margin-bottom:0.4rem;}
-header h1{font-size:1.9rem;color:#F5F2EC;letter-spacing:0.06em;}
-header h1 span{color:var(--gold);}
-nav{background:var(--olive);display:flex;justify-content:center;gap:2rem;padding:0.85rem 1rem;}
-nav a{color:#F5F2EC;text-decoration:none;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;font-family:'Arial',sans-serif;}
-nav a:hover{color:var(--gold);}
-.hero{background:linear-gradient(135deg,#3a3a2a 0%,var(--dark) 100%);padding:3.5rem 2rem;text-align:center;color:#F5F2EC;border-bottom:4px solid var(--gold);}
-.hero .badge{background:var(--gold);color:var(--dark);font-size:0.72rem;padding:0.3rem 1.1rem;border-radius:1rem;letter-spacing:0.15em;text-transform:uppercase;font-family:'Arial',sans-serif;font-weight:bold;display:inline-block;margin-bottom:1.2rem;}
-.hero h2{font-size:2.1rem;font-weight:normal;max-width:700px;margin:0 auto 1rem;line-height:1.4;}
-.hero p{color:#c8c5b8;max-width:600px;margin:0 auto 1.5rem;line-height:1.85;font-size:1rem;}
-.hero .meta{display:flex;justify-content:center;gap:2rem;font-family:'Arial',sans-serif;font-size:0.8rem;color:var(--sage);letter-spacing:0.1em;}
-.content{max-width:920px;margin:3rem auto;padding:0 1.5rem;}
-.outcomes{background:var(--card);border-radius:8px;padding:2rem;margin-bottom:2.5rem;border-left:5px solid var(--sage);}
-.outcomes h3{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--olive);font-family:'Arial',sans-serif;margin-bottom:1.2rem;}
-.outcomes ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;}
-.outcomes ul li{font-size:0.9rem;line-height:1.6;font-family:'Arial',sans-serif;color:var(--text);padding-left:1.4rem;position:relative;}
-.outcomes ul li::before{content:'✦';position:absolute;left:0;color:var(--sage);font-size:0.7rem;top:0.15rem;}
-.section-heading{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--olive);font-family:'Arial',sans-serif;margin-bottom:1.2rem;margin-top:2.5rem;}
-.lessons{display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2.5rem;}
-.lesson{background:var(--card);border-radius:8px;padding:1.6rem 1.75rem;display:flex;gap:1.5rem;align-items:flex-start;border-left:4px solid var(--sage);transition:transform 0.2s,box-shadow 0.2s;}
-.lesson:hover{transform:translateX(4px);box-shadow:0 4px 16px rgba(39,37,30,0.1);}
-.lesson .num{font-size:1.6rem;color:var(--sage);font-weight:bold;min-width:2.5rem;opacity:0.6;}
-.lesson-body h4{font-size:1.05rem;color:var(--dark);margin-bottom:0.4rem;}
-.lesson-body p{font-size:0.88rem;color:#6b6860;line-height:1.7;font-family:'Arial',sans-serif;}
-.lesson-body .duration{display:inline-block;margin-top:0.6rem;font-size:0.72rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;font-family:'Arial',sans-serif;}
-.concepts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-bottom:2.5rem;}
-.concept-card{background:var(--dark);color:#F5F2EC;border-radius:8px;padding:1.5rem;text-align:center;}
-.concept-card .icon{font-size:1.8rem;margin-bottom:0.6rem;}
-.concept-card h5{font-size:0.95rem;color:var(--sage);margin-bottom:0.4rem;letter-spacing:0.05em;}
-.concept-card p{font-size:0.8rem;color:#9a9890;line-height:1.6;font-family:'Arial',sans-serif;}
-.reflection{background:linear-gradient(135deg,var(--olive),var(--sage));border-radius:8px;padding:2.5rem 2rem;margin-bottom:2.5rem;color:#F5F2EC;text-align:center;}
-.reflection h4{font-size:1.15rem;margin-bottom:0.75rem;letter-spacing:0.05em;}
-.reflection p{font-size:0.92rem;line-height:1.85;opacity:0.92;max-width:600px;margin:0 auto;font-family:'Arial',sans-serif;}
-.activity-box{background:var(--card);border-radius:8px;padding:2rem;margin-bottom:2.5rem;border-top:4px solid var(--gold);}
-.activity-box h3{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-family:'Arial',sans-serif;margin-bottom:1rem;}
-.activity-box ol{padding-left:1.2rem;}
-.activity-box ol li{font-size:0.9rem;font-family:'Arial',sans-serif;line-height:1.75;color:var(--text);margin-bottom:0.5rem;}
-.activity-box ol li strong{color:var(--dark);}
-.module-nav{display:flex;justify-content:space-between;align-items:center;margin-top:3rem;padding-top:2rem;border-top:1px solid #d8d4cc;margin-bottom:1rem;}
-.btn{display:inline-block;padding:0.8rem 1.8rem;border-radius:4px;text-decoration:none;font-family:'Arial',sans-serif;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;transition:opacity 0.2s;}
-.btn-outline{border:2px solid var(--olive);color:var(--olive);}
-.btn-primary{background:var(--dark);color:var(--sage);}
-.btn:hover{opacity:0.72;}
-footer{background:var(--dark);color:#7a7870;text-align:center;padding:2rem;font-size:0.8rem;font-family:'Arial',sans-serif;letter-spacing:0.05em;margin-top:3rem;}
-footer span{color:var(--sage);}
-@media(max-width:600px){.outcomes ul{grid-template-columns:1fr;}.hero h2{font-size:1.5rem;}.hero .meta{flex-direction:column;gap:0.5rem;}.module-nav{flex-direction:column;gap:1rem;}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6 - Leading Across Borders | EDGE Programme</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}:root{--dark:#27251E;--sage:#7A9E7E;--olive:#6B7C45;--bg:#F5F2EC;--card:#EDE9DF;--text:#3D3B35;--gold:#A89060;}body{font-family:'Georgia',serif;background:var(--bg);color:var(--text);}header{background:var(--dark);padding:1.5rem 2rem 2rem;text-align:center;}header .back{display:inline-block;color:var(--sage);text-decoration:none;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;font-family:'Arial',sans-serif;margin-bottom:1rem;}header .back:hover{color:var(--gold);}header .logo{font-size:0.72rem;letter-spacing:0.25em;color:var(--sage);text-transform:uppercase;font-family:'Arial',sans-serif;margin-bottom:0.4rem;}header h1{font-size:1.9rem;color:#F5F2EC;letter-spacing:0.06em;}header h1 span{color:var(--gold);}nav{background:var(--olive);display:flex;justify-content:center;gap:2rem;padding:0.85rem 1rem;}nav a{color:#F5F2EC;text-decoration:none;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;font-family:'Arial',sans-serif;}nav a:hover{color:var(--gold);}.hero{background:linear-gradient(135deg,#3a3a2a 0%,var(--dark) 100%);padding:3.5rem 2rem;text-align:center;color:#F5F2EC;border-bottom:4px solid var(--gold);}.hero .badge{background:var(--gold);color:var(--dark);font-size:0.72rem;padding:0.3rem 1.1rem;border-radius:1rem;letter-spacing:0.15em;text-transform:uppercase;font-family:'Arial',sans-serif;font-weight:bold;display:inline-block;margin-bottom:1.2rem;}.hero h2{font-size:2.1rem;font-weight:normal;max-width:700px;margin:0 auto 1rem;line-height:1.4;}.hero p{color:#c8c5b8;max-width:600px;margin:0 auto 1.5rem;line-height:1.85;font-size:1rem;}.hero .meta{display:flex;justify-content:center;gap:2rem;font-family:'Arial',sans-serif;font-size:0.8rem;color:var(--sage);letter-spacing:0.1em;}.content{max-width:920px;margin:3rem auto;padding:0 1.5rem;}.outcomes{background:var(--card);border-radius:8px;padding:2rem;margin-bottom:2.5rem;border-left:5px solid var(--sage);}.outcomes h3{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--olive);font-family:'Arial',sans-serif;margin-bottom:1.2rem;}.outcomes ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;}.outcomes ul li{font-size:0.9rem;line-height:1.6;font-family:'Arial',sans-serif;color:var(--text);padding-left:1.4rem;position:relative;}.outcomes ul li::before{content:'\2726';position:absolute;left:0;color:var(--sage);font-size:0.7rem;top:0.15rem;}.section-heading{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--olive);font-family:'Arial',sans-serif;margin-bottom:1.2rem;margin-top:2.5rem;}.lessons{display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2.5rem;}.lesson{background:var(--card);border-radius:8px;padding:1.6rem 1.75rem;display:flex;gap:1.5rem;align-items:flex-start;border-left:4px solid var(--sage);transition:transform 0.2s,box-shadow 0.2s;}.lesson:hover{transform:translateX(4px);box-shadow:0 4px 16px rgba(39,37,30,0.1);}.lesson .num{font-size:1.6rem;color:var(--sage);font-weight:bold;min-width:2.5rem;opacity:0.6;}.lesson-body h4{font-size:1.05rem;color:var(--dark);margin-bottom:0.4rem;}.lesson-body p{font-size:0.88rem;color:#6b6860;line-height:1.7;font-family:'Arial',sans-serif;}.lesson-body .duration{display:inline-block;margin-top:0.6rem;font-size:0.72rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;font-family:'Arial',sans-serif;}.concepts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-bottom:2.5rem;}.concept-card{background:var(--dark);color:#F5F2EC;border-radius:8px;padding:1.5rem;text-align:center;}.concept-card .icon{font-size:1.8rem;margin-bottom:0.6rem;}.concept-card h5{font-size:0.95rem;color:var(--sage);margin-bottom:0.4rem;letter-spacing:0.05em;}.concept-card p{font-size:0.8rem;color:#9a9890;line-height:1.6;font-family:'Arial',sans-serif;}.reflection{background:linear-gradient(135deg,var(--olive),var(--sage));border-radius:8px;padding:2.5rem 2rem;margin-bottom:2.5rem;color:#F5F2EC;text-align:center;}.reflection h4{font-size:1.15rem;margin-bottom:0.75rem;letter-spacing:0.05em;}.reflection p{font-size:0.92rem;line-height:1.85;opacity:0.92;max-width:600px;margin:0 auto;font-family:'Arial',sans-serif;}.activity-box{background:var(--card);border-radius:8px;padding:2rem;margin-bottom:2.5rem;border-top:4px solid var(--gold);}.activity-box h3{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-family:'Arial',sans-serif;margin-bottom:1rem;}.activity-box ol{padding-left:1.2rem;}.activity-box ol li{font-size:0.9rem;font-family:'Arial',sans-serif;line-height:1.75;color:var(--text);margin-bottom:0.5rem;}.activity-box ol li strong{color:var(--dark);}.module-nav{display:flex;justify-content:space-between;align-items:center;margin-top:3rem;padding-top:2rem;border-top:1px solid #d8d4cc;margin-bottom:1rem;}.btn{display:inline-block;padding:0.8rem 1.8rem;border-radius:4px;text-decoration:none;font-family:'Arial',sans-serif;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;transition:opacity 0.2s;}.btn-outline{border:2px solid var(--olive);color:var(--olive);}.btn-outline:hover{color:var(--color);opacity:0.72;}.btn-primary{background:var(--dark);color:var(--sage);}.btn-primary:hover{color:var(--sage);opacity:0.72;}.btn:hover{opacity:0.72;}.btn-launch{background:var(--gold);color:var(--dark);font-weight:bold;}.btn-launch:hover{background:var(--gold);opacity:0.85;}footer{background:var(--dark);color:#7a7870;text-align:center;padding:2rem;font-size:0.8rem;font-family:'Arial',sans-serif;letter-spacing:0.05em;margin-top:3rem;}footer span{color:var(--sage);}@media(max-width:600px){.outcomes ul{grid-template-columns:1fr;}.hero h2{font-size:1.5rem;}.hero .meta{flex-direction:column;gap:0.5rem;}.module-nav{flex-direction:column;gap:1rem;}}
+    </style>
 </head>
 <body>
-
-<header>
-  <div><a href="index.html" class="back">← Back to All Modules</a></div>
-  <div class="logo">The EDGE Programme</div>
-  <h1>Module <span>06</span></h1>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="index.html">Modules</a>
-</nav>
-
-<section class="hero">
-  <div class="badge">Available Now</div>
-  <h2>Leading Across Borders and Time Zones</h2>
-  <p>Develop the cultural intelligence and remote leadership skills to manage global teams with confidence, clarity and connection.</p>
-  <div class="meta">
-    <span>⏱ 90 mins estimated</span>
-    <span>📋 6 Lessons</span>
-    <span>🌍 Global Teams Focus</span>
-  </div>
-</section>
-
-<div class="content">
-
-  <div class="outcomes">
-    <h3>By the end of this module you will be able to…</h3>
-    <ul>
-      <li>Understand the realities of leading global and hybrid teams today</li>
-      <li>Establish effective team norms and rhythms for distributed working</li>
-      <li>Support team performance, wellbeing and conflict resolution at a distance</li>
-      <li>Manage time zones, workload and team rhythm fairly and effectively</li>
-      <li>Lead performance and wellbeing in a remote or hybrid context</li>
-      <li>Identify and address communication breakdowns and cultural misunderstandings</li>
-    </ul>
-  </div>
-
-  <h3 class="section-heading">Module Lessons</h3>
-  <div class="lessons">
-
-    <div class="lesson">
-      <div class="num">01</div>
-      <div class="lesson-body">
-        <h4>Global and Hybrid Team Realities</h4>
-        <p>Explore the landscape of modern global and hybrid teams — the opportunities they bring and the unique challenges leaders face when their teams span borders and time zones.</p>
-        <span class="duration">⏱ 15 mins</span>
-      </div>
+    <header>
+        <a href="index.html" class="back">← Back to All Modules</a>
+        <div class="logo">The EDGE Programme</div>
+        <h1>Module <span>06</span></h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">Modules</a>
+    </nav>
+    <div class="hero">
+        <div class="badge">Available Now</div>
+        <h2>Leading Across Borders and Time Zones</h2>
+        <p>Develop the cultural intelligence and remote leadership skills to manage global teams with confidence, clarity and connection.</p>
+        <div class="meta">
+            <span>⏱ 90 mins estimated</span>
+            <span>📋 6 Lessons</span>
+            <span>🌍 Global Teams Focus</span>
+        </div>
     </div>
-
-    <div class="lesson">
-      <div class="num">02</div>
-      <div class="lesson-body">
-        <h4>Establishing Effective Team Norms and Rhythms</h4>
-        <p>Learn how to co-create clear team agreements, communication norms and working rhythms that keep distributed teams aligned, accountable and connected.</p>
-        <span class="duration">⏱ 15 mins</span>
-      </div>
+    <div class="content">
+        <div class="outcomes">
+            <h3>By the end of this module you will be able to…</h3>
+            <ul>
+                <li>Understand the realities of leading global and hybrid teams today</li>
+                <li>Establish effective team norms and rhythms for distributed working</li>
+                <li>Support team performance, wellbeing and conflict resolution at a distance</li>
+                <li>Manage time zones, workload and team rhythm fairly and effectively</li>
+                <li>Lead performance and wellbeing in a remote or hybrid context</li>
+                <li>Identify and address communication breakdowns and cultural misunderstandings</li>
+            </ul>
+        </div>
+        <h3 class="section-heading">Module Lessons</h3>
+        <div class="lessons">
+            <div class="lesson">
+                <div class="num">01</div>
+                <div class="lesson-body">
+                    <h4>Global and Hybrid Team Realities</h4>
+                    <p>Explore the landscape of modern global and hybrid teams — the opportunities they bring and the unique challenges leaders face when their teams span borders and time zones.</p>
+                    <div class="duration">⏱ 15 mins</div>
+                </div>
+            </div>
+            <div class="lesson">
+                <div class="num">02</div>
+                <div class="lesson-body">
+                    <h4>Establishing Effective Team Norms and Rhythms</h4>
+                    <p>Learn how to co-create clear team agreements, communication norms and working rhythms that keep distributed teams aligned, accountable and connected.</p>
+                    <div class="duration">⏱ 15 mins</div>
+                </div>
+            </div>
+            <div class="lesson">
+                <div class="num">03</div>
+                <div class="lesson-body">
+                    <h4>Driving Performance, Wellbeing, and Conflict Resolution at a Distance</h4>
+                    <p>Discover strategies for maintaining high performance and team wellbeing remotely, and develop the skills to identify and resolve conflict before it escalates.</p>
+                    <div class="duration">⏱ 15 mins</div>
+                </div>
+            </div>
+            <div class="lesson">
+                <div class="num">04</div>
+                <div class="lesson-body">
+                    <h4>Time Zones, Rhythm and Workload Management</h4>
+                    <p>Master practical approaches to scheduling across time zones with fairness and empathy, managing workload distribution and building sustainable team rhythms.</p>
+                    <div class="duration">⏱ 15 mins</div>
+                </div>
+            </div>
+            <div class="lesson">
+                <div class="num">05</div>
+                <div class="lesson-body">
+                    <h4>Leading Performance and Wellbeing Remotely</h4>
+                    <p>Build your confidence as a remote leader — setting clear expectations, running effective check-ins and creating a culture of trust, visibility and psychological safety.</p>
+                    <div class="duration">⏱ 15 mins</div>
+                </div>
+            </div>
+            <div class="lesson">
+                <div class="num">06</div>
+                <div class="lesson-body">
+                    <h4>Communication Breakdowns and Cultural Misunderstandings</h4>
+                    <p>Develop cultural intelligence to recognise, prevent and recover from communication breakdowns — and lead with greater sensitivity, clarity and inclusion across cultures.</p>
+                    <div class="duration">⏱ 15 mins</div>
+                </div>
+            </div>
+        </div>
+        <h3 class="section-heading">Key Concepts Covered</h3>
+        <div class="concepts-grid">
+            <div class="concept-card">
+                <div class="icon">🌍</div>
+                <h5>Global Team Dynamics</h5>
+                <p>Understanding the realities of hybrid and cross-border teamwork</p>
+            </div>
+            <div class="concept-card">
+                <div class="icon">📋</div>
+                <h5>Team Norms</h5>
+                <p>Co-creating agreements that keep distributed teams aligned</p>
+            </div>
+            <div class="concept-card">
+                <div class="icon">🕐</div>
+                <h5>Time Zone Fairness</h5>
+                <p>Scheduling and workload management across time zones</p>
+            </div>
+            <div class="concept-card">
+                <div class="icon">🧠</div>
+                <h5>Cultural Intelligence</h5>
+                <p>Recognising and navigating cultural misunderstandings</p>
+            </div>
+        </div>
+        <div class="reflection">
+            <h4>Reflection Prompt</h4>
+            <p>Think about your current or most recent team. How well do your team norms support remote or hybrid working? What is one change you could make to better support performance, wellbeing or inclusion across borders?</p>
+        </div>
+        <div class="activity-box">
+            <h3>Practice Activity</h3>
+            <ol>
+                <li><strong>Map your team:</strong> List where each team member is based and their time zone.</li>
+                <li><strong>Audit your norms:</strong> Do you have clear agreements about communication, availability and meetings? If not, draft one norm you could introduce.</li>
+            </ol>
+        </div>
+        <div class="module-nav">
+            <a href="#" class="btn btn-outline">Previous Module</a>
+            <a href="m6-rise/index.html" class="btn btn-launch">Launch Module</a>
+            <a href="#" class="btn btn-primary">Next Module</a>
+        </div>
     </div>
-
-    <div class="lesson">
-      <div class="num">03</div>
-      <div class="lesson-body">
-        <h4>Driving Performance, Wellbeing, and Conflict Resolution at a Distance</h4>
-        <p>Discover strategies for maintaining high performance and team wellbeing remotely, and develop the skills to identify and resolve conflict before it escalates.</p>
-        <span class="duration">⏱ 15 mins</span>
-      </div>
-    </div>
-
-    <div class="lesson">
-      <div class="num">04</div>
-      <div class="lesson-body">
-        <h4>Time Zones, Rhythm and Workload Management</h4>
-        <p>Master practical approaches to scheduling across time zones with fairness and empathy, managing workload distribution and building sustainable team rhythms.</p>
-        <span class="duration">⏱ 15 mins</span>
-      </div>
-    </div>
-
-    <div class="lesson">
-      <div class="num">05</div>
-      <div class="lesson-body">
-        <h4>Leading Performance and Wellbeing Remotely</h4>
-        <p>Build your confidence as a remote leader — setting clear expectations, running effective check-ins and creating a culture of trust, visibility and psychological safety.</p>
-        <span class="duration">⏱ 15 mins</span>
-      </div>
-    </div>
-
-    <div class="lesson">
-      <div class="num">06</div>
-      <div class="lesson-body">
-        <h4>Communication Breakdowns and Cultural Misunderstandings</h4>
-        <p>Develop cultural intelligence to recognise, prevent and recover from communication breakdowns — and lead with greater sensitivity, clarity and inclusion across cultures.</p>
-        <span class="duration">⏱ 15 mins</span>
-      </div>
-    </div>
-
-  </div>
-
-  <h3 class="section-heading">Key Concepts Covered</h3>
-  <div class="concepts-grid">
-    <div class="concept-card">
-      <div class="icon">🌍</div>
-      <h5>Global Team Dynamics</h5>
-      <p>Understanding the realities of hybrid and cross-border teamwork</p>
-    </div>
-    <div class="concept-card">
-      <div class="icon">📋</div>
-      <h5>Team Norms</h5>
-      <p>Co-creating agreements that keep distributed teams aligned</p>
-    </div>
-    <div class="concept-card">
-      <div class="icon">🕐</div>
-      <h5>Time Zone Fairness</h5>
-      <p>Scheduling and workload management across time zones</p>
-    </div>
-    <div class="concept-card">
-      <div class="icon">🧠</div>
-      <h5>Cultural Intelligence</h5>
-      <p>Recognising and navigating cultural misunderstandings</p>
-    </div>
-  </div>
-
-  <div class="reflection">
-    <h4>Reflection Prompt</h4>
-    <p>Think about your current or most recent team. How well do your team norms support remote or hybrid working? What is one change you could make to better support performance, wellbeing or inclusion across borders?</p>
-  </div>
-
-  <div class="activity-box">
-    <h3>Practice Activity</h3>
-    <ol>
-      <li><strong>Map your team:</strong> List where each team member is based and their time zone.</li>
-      <li><strong>Audit your norms:</strong> Do you have clear agreements about communication, availability and meetings? If not, draft one norm you could introduce.</li>
-      ><strong>Identify a gap
+    <footer>
+        <p>© 2023 The EDGE Programme <span>|</span> Global Leadership Series</p>
+    </footer>
+</body>
+</html>
