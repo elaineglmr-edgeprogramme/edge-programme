@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 6: Leading Across Borders and Time Zones | EDGE Programme</title>
+  <meta name="description" content="EDGE Programme – Module 6: Leading Across Borders and Time Zones. A practical eLearning module for global professionals." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sage:        #7A9E7E;
+      --sage-light:  #A8C5AC;
+      --sage-dark:   #4F7153;
+      --olive:       #6B7C4A;
+      --olive-light: #8D9E6A;
+      --cream:       #F5F3EE;
+      --cream-dark:  #EAE7E0;
+      --text:        #27251E;
+      --text-muted:  #5A5850;
+      --white:       #FFFFFF;
+      --border:      #D4CFC4;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--text);
+      color: var(--white);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--sage-light);
+      letter-spacing: 0.08em;
+    }
+
+    .logo-sub {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #aaa;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: -2px;
+    }
+
+    nav {
+      background: var(--olive);
+      padding: 0 2rem;
+      display: flex;
+      gap: 0.25rem;
+      overflow-x: auto;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.65rem 1rem;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    nav a:hover { background: rgba(255,255,255,0.1); }
+    nav a.active { border-bottom-color: var(--sage-light); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--sage-dark) 0%, var(--olive) 60%, #3d4a2a 100%);
+      color: var(--white);
+      padding: 4rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .module-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .meta-icon {
+      width: 16px;
+      height: 16px;
+      opacity: 0.8;
+    }
+
+    /* ── Launch Button ── */
+    .launch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--white);
+      color: var(--sage-dark);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+
+    .launch-btn:hover {
+      background: var(--cream);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .launch-btn svg { flex-shrink: 0; }
+
+    /* ── Main Content ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ── Section headings ── */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── About card ── */
+    .about-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .about-card p + p { margin-top: 0.85rem; }
+
+    /* ── Outcomes ── */
+    .outcomes {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--sage);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .outcomes ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .outcomes li {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    .lo-tag {
+      flex-shrink: 0;
+      background: var(--sage);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-top: 2px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Lessons grid ── */
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .lesson-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .lesson-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .lesson-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--sage);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lesson-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* ── CTA bottom ── */
+    .cta-bottom {
+      background: var(--sage-dark);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-bottom h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-bottom p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      font-size: 0.78rem;
+      padding: 1.5rem 2rem;
+      margin-top: 3rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header { padding: 0 1rem; }
+      nav { padding: 0 1rem; }
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      main { padding: 2rem 1.25rem; }
+      .about-card, .outcomes { padding: 1.25rem; }
+      .lessons-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="EDGE logo">
+        <rect width="36" height="36" rx="6" fill="#7A9E7E"/>
+        <path d="M8 11h12v3H11v3h8v3h-8v3h9v3H8V11z" fill="#27251E"/>
+        <path d="M22 11h6l-6 14h6" stroke="#27251E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="logo-text">EDGE</div>
+        <div class="logo-sub">Professional Skills Programme</div>
+      </div>
+    </a>
+  </header>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Module 1: Meetings</a>
+    <a href="#">Module 2: Customer Experience</a>
+    <a href="#">Module 3: Mentoring</a>
+    <a href="#">Module 4: Difficult Conversations</a>
+    <a href="#">Module 5: Communication</a>
+    <a href="#" class="active">Module 6: Leading Across Borders</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="module-badge">Module 6 of 6</span>
+      <h1>Leading Across Borders and Time Zones</h1>
+      <p class="hero-subtitle">Strategies for Global Team Success</p>
+      <div class="hero-meta">
+        <span class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          6 Lessons &nbsp;·&nbsp; Self-paced
+        </span>
+        <span class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          Global &amp; Hybrid Teams
+        </span>
+        <span class="meta-item">
+          <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Articulate Rise · Mobile-friendly
+        </span>
+      </div>
+      <a href="https://elaineglmr-edgeprogramme.github.io/edge-programme/" target="_blank" class="launch-btn" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Launch Module 6
+      </a>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main>
+
+    <!-- About -->
+    <p class="section-label">About This Module</p>
+    <h2>Why This Module Matters</h2>
+    <div class="about-card">
+      <p>Global and hybrid teams rarely share the same hours, office, or cultural norms. That gap creates real friction in how people communicate, build trust, and interpret each other's behaviour — and even straightforward tasks can become harder to coordinate when work crosses borders.</p>
+      <p>This module equips you with practical strategies for leading distributed teams effectively. Working through six structured lessons, you will move from understanding the core challenges of global teamwork to applying frameworks and tools in realistic workplace scenarios.</p>
+      <p>Designed for busy professionals, each lesson uses a mix of scenarios, interactive activities, and reflective tasks that connect directly to your own team context.</p>
+    </div>
+
+    <!-- Learning Outcomes -->
+    <p class="section-label">Learning Outcomes</p>
+    <h2>What You Will Be Able to Do</h2>
+    <div class="outcomes">
+      <ul>
+        <li>
+          <span class="lo-tag">LO2</span>
+          Analyse workplace situations and your own professional context using relevant frameworks to identify challenges and opportunities in global team leadership.
+        </li>
+        <li>
+          <span class="lo-tag">LO3</span>
+          Apply practical leadership and collaboration skills in realistic global team situations, including managing time zones, building team norms, and handling cultural misunderstandings.
+        </li>
+        <li>
+          <span class="lo-tag">LO4</span>
+          Evaluate and improve your own leadership practice by using reflection, feedback and evidence to refine your approach to distributed team management.
+        </li>
+      </ul>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Lessons -->
+    <p class="section-label">Module Structure</p>
+    <h2>Six Lessons</h2>
+    <div class="lessons-grid">
+      <div class="lesson-card">
+        <div class="lesson-num">1</div>
+        <div class="lesson-title">Global and Hybrid Team Realities</div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-num">2</div>
+        <div class="lesson-title">Establishing Effective Team Norms and Rhythms</div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-num">3</div>
+        <div class="lesson-title">Driving Performance, Wellbeing, and Conflict Resolution at a Distance</div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-num">4</div>
+        <div class="lesson-title">Time Zones, Rhythm and Workload Management</div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-num">5</div>
+        <div class="lesson-title">Leading Performance and Wellbeing Remotely</div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-num">6</div>
+        <div class="lesson-title">Communication Breakdowns and Cultural Misunderstandings</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- CTA -->
+    <div class="cta-bottom">
+      <h3>Ready to Start?</h3>
+      <p>The module is fully self-paced and mobile-friendly. You can pause and return at any time.</p>
+      <a href="https://elaineglmr-edgeprogramme.github.io/edge-programme/" target="_blank" class="launch-btn" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Launch Module 6
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Digital Learning Institute. All rights reserved. &nbsp;·&nbsp; EDGE Professional Skills Programme</p>
+  </footer>
+
+</body>
+</html>
